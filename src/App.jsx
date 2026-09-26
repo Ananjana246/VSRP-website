@@ -1,6 +1,11 @@
 function App() {
   return (
-    <h1>Hello VSRP</h1>
+    <header>
+      <h1>VSRP</h1>
+      <nav>
+        <a href="#">ABOUT</a>
+      </nav>
+    </header>
   );
 }
 

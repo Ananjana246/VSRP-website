@@ -1,14 +1,288 @@
+/* TABLET / SMALL LAPTOP */
+
+@media (max-width: 1100px) {
+  .hero-title-left {
+    left: 5%;
+    width: 48%;
+  }
+
+  .hero-title-right {
+    right: 5%;
+    width: 42%;
+  }
+
+  .hero-title-left h2,
+  .hero-title-right h2 {
+    font-size: clamp(48px, 5.5vw, 70px);
+  }
+
+  .header nav {
+    gap: 18px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  .hero-title-left {
+    left: 20px;
+    top: 30%;
+    width: calc(100% - 40px);
+  }
+
+  .hero-title-right {
+    left: 20px;
+    right: auto;
+    top: 46%;
+    width: calc(100% - 40px);
+  }
+
+  .hero-title-left h2,
+  .hero-title-right h2 {
+    font-size: clamp(42px, 11vw, 65px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    left: 20px;
+    right: 20px;
+    bottom: 14%;
+  }
+
+  .hero-description p {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    left: 20px;
+    right: 20px;
+    bottom: 5%;
+
+    justify-content: flex-start;
+  }
+
+  .what-we-do {
+    display: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 28px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.header h1 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 800;
+  font-style: italic;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header nav a {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* CONTACT */
 .contact-button {
-  gap: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: #f4512b;
+  color: white;
+  padding: 7px 7px 7px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
 }
 .contact-arrow {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   color: #f4512b;
   border-radius: 50%;
   font-size: 18px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("./assets/hero.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.hero-content {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* LEFT HEADING */
+
+.hero-title-left {
+  position: absolute;
+  left: 6%;
+  top: 35%;
+  width: 45%;
+}
+.hero-title-left h2,
+.hero-title-right h2 {
+  margin: 0;
+  font-size: clamp(55px, 6vw, 90px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+
+/* RIGHT HEADING */
+
+.hero-title-right {
+  position: absolute;
+  right: 10%;
+  top: 54%;
+  width: 40%;
+}
+.hero-title-left span,
+.hero-title-right span {
+  color: #f4512b;
+}
+
+/* DESCRIPTION */
+
+.hero-description {
+  position: absolute;
+  left: 6%;
+  bottom: 14%;
+}
+.hero-description p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* BUTTONS */
+
+.hero-actions {
+  position: absolute;
+  right: 10%;
+  bottom: 13%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.project-button {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 8px 8px 8px 24px;
+  background: #f4512b;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.project-button span {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #f4512b;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.what-we-do {
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px dotted white;
+  padding-bottom: 7px;
+}
+
+/* SCROLL */
+
+.scroll-down {
+  position: absolute;
+  left: 6%;
+  bottom: 4%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.scroll-down span {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted white;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 25px;
 }

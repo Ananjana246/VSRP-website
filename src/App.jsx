@@ -8,6 +8,11 @@ function App() {
         <a href="#">PRODUCTS</a>
         <a href="#">PROJECTS</a>
         <a href="#">INSIGHTS</a>
+
+        <a href="#" className="contact-button">
+          <span>CONTACT</span>
+          <span className="contact-arrow">→</span>
+        </a>
       </nav>
     </header>
   );

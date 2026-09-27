@@ -286,3 +286,97 @@ a {
   z-index: 100;
   font-size: 25px;
 }
+
+/* ABOUT / STATS */
+
+.about-section {
+  min-height: 650px;
+  padding: 120px 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  background: #edf2f4;
+  color: #19191d;
+}
+
+.about-stats h2 {
+  margin: 0 0 70px;
+  font-size: clamp(45px, 5vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.about-stats h2 span {
+  color: #f4512b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px 70px;
+}
+
+.stat {
+  border-top: 1px solid #c9ced1;
+  padding-top: 25px;
+}
+
+.stat strong {
+  display: block;
+  font-size: clamp(50px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.stat strong span {
+  color: #f4512b;
+}
+
+.stat p {
+  margin: 12px 0 0;
+  font-size: 17px;
+  color: #55565a;
+}
+
+.about-content {
+  padding-top: 10px;
+}
+
+.about-content h3 {
+  margin: 0 0 40px;
+  font-size: clamp(35px, 4vw, 55px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.about-content p {
+  max-width: 600px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #55565a;
+  margin-bottom: 25px;
+}
+
+.about-button {
+  margin-top: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 7px 7px 7px 25px;
+  background: #dfe3e5;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.about-button span {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4512b;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+}

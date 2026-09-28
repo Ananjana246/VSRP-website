@@ -1,6 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import logo from "./assets/logo.jpg";
+import rubberV from "./assets/vsrp-rubber-v-clean.jpg";
+import insight1 from "./assets/image1.jpg";
+import insight2 from "./assets/image2.jpg";
+import insight3 from "./assets/image3.jpg";
+import project1 from "./assets/images1.jpg";
+import project2 from "./assets/images2.jpg";
+import project3 from "./assets/images3.jpg";
 
 function App() {
 
@@ -8,6 +15,8 @@ function App() {
   const [selectedMenuIndustry, setSelectedMenuIndustry] = useState(
     "Agriculture"
   );
+  const [isWhatWeDoClicked, setIsWhatWeDoClicked] = useState(false);
+  const [isAboutClicked, setIsAboutClicked] = useState(false);
 
   const industries = {
     Civil: {
@@ -209,9 +218,21 @@ function App() {
             DISCUSS YOUR PROJECT
             <span>→</span>
           </a>
-          <a href="#" className="what-we-do">
+
+          <a
+            href="#"
+            className={`what-we-do ${isWhatWeDoClicked ? "shake" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsWhatWeDoClicked(true);
+              setTimeout(() => {
+                setIsWhatWeDoClicked(false);
+              }, 400);
+            }}
+          >
             SEE WHAT WE DO →
           </a>
+          
         </div>
 
         <div className="scroll-down">
@@ -267,15 +288,28 @@ function App() {
             We've been doing it for more than two decades, helping
             businesses across Australia keep projects moving.
           </p>
-          <a href="#" className="about-button">
+          
+          <a
+            href="#"
+            className={`about-button ${isAboutClicked ? "clicked" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsAboutClicked(true);
+            }}
+          >
             ABOUT VSRP
             <span>→</span>
           </a>
+
         </div>
 
       </section>
     
-      <a href="#" className="whatsapp-button">
+      <a
+        href="#"
+        className="whatsapp-button"
+        onClick={(e) => e.preventDefault()}
+      >
         ☎
       </a>
 
@@ -292,9 +326,9 @@ function App() {
             We work with you to design, engineer and manufacture rubber
             solutions that meet your exact requirements.
           </p>
-            <div className="build-logo">
-              <div className="build-v">V</div>
-            </div>
+          <div className="build-logo">
+            <img src={rubberV} alt="VSRP" className="build-v-image" />
+          </div>
             <div className="scroll-indicator">
               <span>↓</span>
               <strong>SCROLL DOWN</strong>
@@ -319,6 +353,7 @@ function App() {
         </div>
 
       </section>
+
 
 {/* CONCEPT SECTION */}
       <section className="concept-section">
@@ -380,6 +415,105 @@ function App() {
           <strong>SCROLL DOWN</strong>
         </div>
 
+      </section>
+
+{/* PROJECT SECTION */}
+
+      <section className="projects-section">
+
+        <div className="projects-header">
+          <h2>
+            Wherever Precision Is
+            <br />
+            Needed, <span>VSRP Delivers.</span>
+          </h2>
+          <a
+            href="#"
+            className="projects-button"
+            onClick={(e) => e.preventDefault()}
+          >
+            VIEW ALL PROJECTS
+            <span>→</span>
+          </a>
+        </div>
+
+        <div className="projects-slider">
+          <article className="project-card">
+            <div className="project-image">
+              <img src={project1} alt="Custom Extrusion Solution" />
+              <a
+                href="#"
+                className="view-project"
+                onClick={(e) => e.preventDefault()}
+              >
+                VIEW PROJECT
+              </a>
+              <div className="project-tags">
+                <span>MINING</span>
+                <span>EPDM</span>
+                <span>EXTRUSION</span>
+                <span>CONVEYOR SYSTEM</span>
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>Custom Extrusion Solution</h3>
+              <p>
+                A specialised rubber extrusion profile engineered to meet strict
+                performance and dimensional requirements.
+              </p>
+            </div>
+          </article>
+          <article className="project-card">
+            <div className="project-image">
+              <img src={project2} alt="Custom Extrusion Solution" />
+              <a
+                href="#"
+                className="view-project"
+                onClick={(e) => e.preventDefault()}
+              >
+                VIEW PROJECT
+              </a>
+              <div className="project-tags">
+                <span>MINING</span>
+                <span>EPDM</span>
+                <span>EXTRUSION</span>
+                <span>CONVEYOR SYSTEM</span>
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>Custom Extrusion Solution</h3>
+              <p>
+                A specialised rubber extrusion profile engineered to meet strict
+                performance and dimensional requirements.
+              </p>
+            </div>
+          </article>
+          <article className="project-card">
+            <div className="project-image">
+              <img src={project3} alt="Custom Extrusion Solution" />
+              <a
+                href="#"
+                className="view-project"
+                onClick={(e) => e.preventDefault()}
+              >
+                VIEW PROJECT
+              </a>
+              <div className="project-tags">
+                <span>MINING</span>
+                <span>EPDM</span>
+                <span>EXTRUSION</span>
+                <span>CONVEYOR SYSTEM</span>
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>Custom Extrusion Solution</h3>
+              <p>
+                A specialised rubber extrusion profile engineered to meet strict
+                performance and dimensional requirements.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
       
 
@@ -443,7 +577,11 @@ function App() {
             />
             <div className="industry-overlay">
               <h3>{currentIndustry.title}</h3>
-              <a href="#" className="industry-button">
+              <a
+                href="#"
+                className="industry-button"
+                onClick={(e) => e.preventDefault()}
+              >
                 SEE OUR CAPABILITIES
                 <span>→</span>
               </a>
@@ -501,7 +639,7 @@ function App() {
    
       </section>
 
-{/* FAQ SECTION */}
+ {/* FAQ SECTION */}
 
       <section className="faq-section">
 
@@ -555,7 +693,190 @@ function App() {
 
       </section>
 
+      {/* INSIGHTS SECTION */}
 
+      <section className="insights-section">
+        <div className="insights-header">
+          <div>
+            <h2>
+              Industry <span>Insights</span>
+            </h2>
+            <p>
+              Practical advice, material expertise and engineering
+              <br />
+              knowledge to help you make informed decisions
+            </p>
+          </div>
+
+          <a href="#" className="insights-button" onClick={(e) => e.preventDefault()}>
+            VIEW ALL INSIGHTS
+            <span>→</span>
+          </a>
+        </div>
+
+        <div className="insights-grid">
+          <article className="insight-card">
+            <img src={insight1} alt="Rubber compounds" />
+            <div className="insight-content">
+              <h3>
+                Understanding Rubber Compounds:
+                <br />
+                Choosing The Right Material...
+              </h3>
+              <a href="#" onClick={(e) => e.preventDefault()}>
+                VIEW DETAIL →
+              </a>
+            </div>
+          </article>
+
+          <article className="insight-card">
+            <img src={insight2} alt="Rubber manufacturing" />
+            <div className="insight-content">
+              <h3>
+                Understanding Rubber Compounds:
+                <br />
+                Choosing The Right Material...
+              </h3>
+              <a href="#" onClick={(e) => e.preventDefault()}>
+                VIEW DETAIL →
+              </a>
+            </div>
+          </article>
+
+          <article className="insight-card">
+            <img src={insight3} alt="Rubber products" />
+            <div className="insight-content">
+              <h3>
+                Understanding Rubber Compounds:
+                <br />
+                Choosing The Right Material...
+              </h3>
+              <a href="#" onClick={(e) => e.preventDefault()}>
+                VIEW DETAIL →
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+{/* INDUSTRIES CTA SECTION */}
+      <section className="industries-cta-section">
+        <div className="industries-cta-overlay">
+          <div className="industries-cta-left">
+            <h2>
+              VSRP are
+              <br />
+              furthering quality
+              <br />
+              in <span>our industries.</span>
+            </h2>
+          </div>
+
+          <div className="industries-cta-right">
+            <p>
+              Across private, commercial and civil projects, our
+              rubber products are custom-engineered to be
+              reliable and cost-effective. We support the specific
+              needs of specialised providers, plugging the gaps in
+              their projects so they can continue to deliver at the
+              highest level.
+            </p>
+            <a
+              href="#"
+              className="industries-contact-button"
+              onClick={(e) => e.preventDefault()}
+            >
+              CONTACT US
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+{/* FOOTER SECTION */}
+
+      <footer className="footer-section">
+        <div className="footer-main">
+          {/* Logo and description */}
+          <div className="footer-brand">
+            <img
+              src={logo}
+              alt="VSRP Engineered Rubber"
+              className="footer-logo"
+            />
+            <p>
+              For over 20 years, VSRP has delivered
+              <br />
+              engineered rubber solutions built around the
+              <br />
+              unique requirements of Australian businesses.
+            </p>
+            <div className="footer-socials">
+              <a href="#" onClick={(e) => e.preventDefault()}>◎</a>
+              <a href="#" onClick={(e) => e.preventDefault()}>f</a>
+              <a href="#" onClick={(e) => e.preventDefault()}>in</a>
+              <a href="#" onClick={(e) => e.preventDefault()}>𝕏</a>
+            </div>
+            <div className="footer-certification">
+              <div className="certificate-box">✓</div>
+              <span>ISO9001:2015 Accredited</span>
+            </div>
+          </div>
+
+          {/* Company */}
+          <div className="footer-column">
+            <h3>COMPANY</h3>
+
+            <a href="#">About</a>
+            <a href="#">Case Studies</a>
+            <a href="#">Blogs</a>
+            <a href="#">Contact</a>
+          </div>
+
+          {/* Industries */}
+          <div className="footer-column">
+            <h3>INDUSTRIES</h3>
+            <a href="#">Agriculture & Irrigation</a>
+            <a href="#">Plumbing</a>
+            <a href="#">Civil Engineering and Construction</a>
+            <a href="#">Mining</a>
+            <a href="#">Defence</a>
+            <a href="#">Architectural Industry</a>
+            <a href="#">Road Transport</a>
+          </div>
+
+          {/* Contact */}
+          <div className="footer-column footer-contact">
+            <h3>CONTACT</h3>
+            <strong>
+              1800 787 777, +61 (2) 8834 9958
+            </strong>
+            <strong>
+              enquiries@vsrp.com.au
+            </strong>
+          </div>
+
+          {/* Location */}
+          <div className="footer-column">
+            <h3>LOCATION</h3>
+            <strong>
+              Unit 3, 10 Banksia Place,
+              <br />
+              South Windsor NSW 2756
+            </strong>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="footer-bottom">
+          <span>COPYRIGHT © 2026 VSRP</span>
+          <span>SITE BY ACODEZ</span>
+          <div>
+            <span>PRIVACY POLICY</span>
+            <span>ALL RIGHTS RESERVED</span>
+          </div>
+        </div>
+      </footer>
 
 
     </>
@@ -586,5 +907,6 @@ function FAQItem({ question, answer, defaultOpen = false }) {
       )}
     </div>
   );
+
 }
 export default App;

@@ -1,7 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import logo from "./assets/logo.jpg";
 
 function App() {
+
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [selectedMenuIndustry, setSelectedMenuIndustry] = useState(
+    "Agriculture"
+  );
+
   const industries = {
     Civil: {
       title: "Civil Engineering",
@@ -36,11 +43,22 @@ function App() {
     <>
 
       <header className="header">
-        <h1>VSRP</h1>
-        <h6>Engineered Rubber</h6>
+        <img
+          src={logo}
+          alt="VSRP Engineered Rubber"
+          className="header-logo"
+        />
         <nav>
           <a href="#">ABOUT</a>
-          <a href="#">INDUSTRIES</a>
+
+            <button
+              className="industries-link"
+              onClick={() => setIndustriesOpen(!industriesOpen)}
+            >
+            INDUSTRIES
+            <span>⌄</span>
+            </button>
+
           <a href="#">PRODUCTS</a>
           <a href="#">PROJECTS</a>
           <a href="#">INSIGHTS</a>
@@ -50,6 +68,106 @@ function App() {
             <span className="contact-arrow">→</span>
           </a>
         </nav>
+        
+        {industriesOpen && (
+          <div className="industries-dropdown">
+            <div className="industry-column">
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Agriculture & Irrigation" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Agriculture & Irrigation")}
+              >
+                  <span className="industry-icon">♟</span>
+                  <span>Agriculture & Irrigation</span>
+              </div>
+              
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Plumbing" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Plumbing")}
+              >
+                <span className="industry-icon">♧</span>
+                <span>Plumbing</span>
+              </div>
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Civil Engineering & Construction" ? "active" : ""
+                }`}
+                onClick={() =>
+                  setSelectedMenuIndustry("Civil Engineering & Construction")
+                }
+              >
+                <span className="industry-icon">⌂</span>
+                <span>Civil Engineering & Construction</span>
+              </div>
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Mining & Mining-Related Applications"
+                    ? "active"
+                    : ""
+                }`}
+                onClick={() =>
+                  setSelectedMenuIndustry("Mining & Mining-Related Applications")
+                }
+              >
+                <span className="industry-icon">▣</span>
+                <span>Mining & Mining-Related Applications</span>
+              </div>
+
+            </div>
+
+            <div className="industry-column">
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Defence" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Defence")}
+              >
+                <span className="industry-icon">⬡</span>
+                <span>Defence</span>
+              </div>
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Architecture" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Architecture")}
+              >
+                <span className="industry-icon">⚙</span>
+                <span>Architecture</span>
+              </div>
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Road & Transport" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Road & Transport")}
+              >
+                <span className="industry-icon">▰</span>
+                <span>Road & Transport</span>
+              </div>
+
+              <div
+                className={`industry-item ${
+                  selectedMenuIndustry === "Industrial" ? "active" : ""
+                }`}
+                onClick={() => setSelectedMenuIndustry("Industrial")}
+              >
+                <span className="industry-icon">◉</span>
+                <span>Industrial</span>
+              </div>
+
+
+            </div>
+          </div>
+        )}
+
       </header>
       
       {/* HERO SECTION */}
@@ -383,11 +501,90 @@ function App() {
    
       </section>
 
+{/* FAQ SECTION */}
+
+      <section className="faq-section">
+
+        <div className="faq-left">
+          <h2>
+            Frequently Asked
+            <br />
+            <span>Questions</span>
+          </h2>
+          <p>
+            We’ve heard it all. Here’s everything you need to know
+            <br />
+            before working with us.
+          </p>
+          <a href="#contact" className="faq-button">
+            ASK A QUESTION
+            <span>→</span>
+          </a>
+          <div className="faq-decoration">
+            <div className="decoration-orange"></div>
+            <div className="decoration-gray"></div>
+          </div>
+        </div>
+        <div className="faq-right">
+          <FAQItem
+            question="What type of rubber should I use?"
+            answer="At VSRP, we know rubber. Across any application, our experts are well equipped to advise on the best make and material for your rubber products. If you need excellent performance, we can show you exactly how to get it. All you need to do is give us a call."
+            defaultOpen={true}
+          />
+          <FAQItem
+            question="What is the hardness scale for rubber?"
+            answer="Rubber hardness is commonly measured using the Shore hardness scale. Our team can help you select the appropriate hardness for your application."
+          />
+          <FAQItem
+            question="What are minimum order quantities?"
+            answer="Minimum order quantities depend on the product, material, tooling and manufacturing requirements. Contact our team and we can discuss your specific requirements."
+          />
+          <FAQItem
+            question="How can I get a quote?"
+            answer="Send us your drawing, sample or specifications and our team can review your requirements and prepare a quotation."
+          />
+          <FAQItem
+            question="Which materials types do VSRP offer?"
+            answer="We work with a range of rubber materials and can help determine the right material based on your application and performance requirements."
+          />
+          <FAQItem
+            question="Can VSRP source products & materials?"
+            answer="Yes. Our team can assist with sourcing products and materials depending on your project requirements."
+          />
+        </div>
+
+      </section>
+
 
 
 
     </>
 
+  );
+
+}
+
+function FAQItem({ question, answer, defaultOpen = false }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className={`faq-item ${isOpen ? "open" : ""}`}>
+      <button
+        className="faq-question"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span>{question}</span>
+
+        <span className="faq-icon">
+          {isOpen ? "−" : "+"}
+        </span>
+      </button>
+      {isOpen && (
+        <div className="faq-answer">
+          <p>{answer}</p>
+        </div>
+      )}
+    </div>
   );
 }
 export default App;

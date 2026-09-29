@@ -308,6 +308,10 @@ a {
   gap: 10px;
   font-size: 12px;
   font-weight: 600;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  
 }
 .scroll-down span {
   width: 36px;
@@ -1729,3 +1733,573 @@ a {
   font-size: 16px;
   line-height: 1.4;
 }
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* ABOUT */
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 80px 6%;
+  }
+
+  .stats-grid {
+    gap: 30px;
+  }
+
+  /* INDUSTRIES */
+  .industries-content {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .industry-selector {
+    min-height: 520px;
+    padding: 35px 25px;
+  }
+
+  .industry-image {
+    min-height: 450px;
+  }
+
+  .industry-overlay {
+    left: 25px;
+    right: 25px;
+  }
+
+  .industry-overlay h3 {
+    font-size: 30px;
+  }
+
+  /* COMPANY VALUES */
+  .company-values-header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .company-values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* BUILD */
+  .build-section {
+    padding: 80px 25px;
+  }
+
+  .build-logo {
+    width: 280px;
+    height: 280px;
+    margin-top: 50px;
+  }
+
+  .build-v-image {
+    width: 280px;
+  }
+
+  /* SHAPE */
+  .shape-section {
+    min-height: 650px;
+  }
+
+  .shape-overlay {
+    padding: 60px 25px;
+  }
+
+  .shape-overlay h2 {
+    font-size: clamp(45px, 8vw, 70px);
+    letter-spacing: -3px;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 20px 5%;
+  }
+
+  .header-logo {
+    width: 150px;
+  }
+
+  .header nav {
+    gap: 15px;
+  }
+
+  /* FAQ */
+  .faq-section {
+    grid-template-columns: 1fr;
+    padding: 80px 6%;
+  }
+
+  .faq-left {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  /* INDUSTRY DROPDOWN */
+  .industries-dropdown {
+    width: min(720px, 90vw);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 18px 20px;
+  }
+
+  .header-logo {
+    width: 125px;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 750px;
+  }
+
+  .hero-title-left {
+    left: 20px;
+    top: 27%;
+    width: calc(100% - 40px);
+  }
+
+  .hero-title-right {
+    left: 20px;
+    right: auto;
+    top: 48%;
+    width: calc(100% - 40px);
+  }
+
+  .hero-title-left h2,
+  .hero-title-right h2 {
+    font-size: clamp(42px, 12vw, 65px);
+    letter-spacing: -2px;
+    line-height: 0.95;
+  }
+
+  .hero-description {
+    left: 20px;
+    right: 20px;
+    bottom: 16%;
+  }
+
+  .hero-actions {
+    left: 20px;
+    right: 20px;
+    bottom: 5%;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* ABOUT */
+  .about-section {
+    min-height: auto;
+    padding: 70px 20px;
+    gap: 50px;
+  }
+
+  .about-stats h2 {
+    margin-bottom: 45px;
+    font-size: 45px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .stat strong {
+    font-size: 50px;
+  }
+
+  .about-content h3 {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  /* INDUSTRIES */
+  .industries-section {
+    padding: 70px 20px;
+  }
+
+  .industries-header {
+    margin-bottom: 45px;
+  }
+
+  .industries-header h2 {
+    font-size: 45px;
+  }
+
+  .industries-header p {
+    font-size: 15px;
+  }
+
+  .industry-selector {
+    min-height: 500px;
+    padding: 30px 20px;
+  }
+
+  .industry-name {
+    font-size: 30px;
+  }
+
+  .industry-tabs {
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .industry-tab {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .industry-image {
+    min-height: 400px;
+  }
+
+  .industry-overlay {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .industry-overlay h3 {
+    font-size: 28px;
+  }
+
+  .industry-button {
+    font-size: 11px;
+  }
+
+  /* COMPANY VALUES */
+  .company-values-section {
+    padding: 70px 20px;
+  }
+
+  .company-values-header h2 {
+    font-size: 45px;
+  }
+
+  .company-values-header p {
+    font-size: 15px;
+  }
+
+  .company-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-value-card {
+    min-height: 330px;
+    padding: 30px;
+  }
+
+  /* BUILD */
+  .build-section {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .build-content h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .build-content > p {
+    font-size: 15px;
+  }
+
+  .build-logo {
+    width: 230px;
+    height: 230px;
+    margin-top: 45px;
+  }
+
+  .build-v-image {
+    width: 230px;
+  }
+
+  /* RUBBER SHAPE */
+  .shape-section {
+    min-height: 650px;
+  }
+
+  .shape-overlay {
+    padding: 50px 20px;
+  }
+
+  .shape-overlay h2 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .shape-button {
+    margin-top: 35px;
+  }
+
+  /* CONCEPT */
+  .concept-section {
+    padding: 60px 20px 90px;
+  }
+
+  .concept-header h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .concept-header p {
+    font-size: 15px;
+  }
+
+  .concept-header p br {
+    display: none;
+  }
+
+  /* FAQ */
+  .faq-section {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .faq-left h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .faq-left > p {
+    font-size: 15px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+    gap: 15px;
+  }
+
+  .faq-answer {
+    padding-right: 0;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+  }
+
+  /* DROPDOWN */
+  .industries-dropdown {
+    position: fixed;
+    top: 75px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .industry-item {
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    right: 18px;
+    bottom: 18px;
+  }
+}/* =========================================
+   NEW SECTIONS - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* INDUSTRY INSIGHTS */
+  .insights-section {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .insights-header {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .insights-header h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .insights-header p {
+    font-size: 15px;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .insight-card img {
+    height: 250px;
+  }
+
+  .insight-content {
+    padding: 22px 20px 30px;
+  }
+
+  .insight-content h3 {
+    font-size: 20px;
+  }
+
+
+  /* INDUSTRIES CTA */
+  .industries-cta-section {
+    min-height: 650px;
+  }
+
+  .industries-cta-overlay {
+    min-height: 650px;
+    padding: 70px 20px;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    align-content: center;
+  }
+
+  .industries-cta-left h2 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .industries-cta-right {
+    max-width: 100%;
+    justify-self: start;
+  }
+
+  .industries-cta-right p {
+    font-size: 15px;
+  }
+
+
+  /* FOOTER */
+  .footer-main {
+    min-height: auto;
+    padding: 70px 20px 50px;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .footer-logo {
+    width: 220px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+  }
+
+  .footer-certification {
+    margin-top: 60px;
+  }
+
+  .footer-column {
+    grid-column: auto;
+  }
+
+  .footer-column a,
+  .footer-column strong {
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    min-height: auto;
+    padding: 25px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .footer-bottom div {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+
+  /* PROJECTS */
+  .projects-section {
+    padding: 70px 0 70px 20px;
+  }
+
+  .projects-header {
+    padding-right: 20px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .projects-header h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .projects-slider {
+    gap: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+  }
+
+  .project-card {
+    flex: 0 0 86vw;
+    min-width: 0;
+  }
+
+  .project-image {
+    height: 400px;
+  }
+
+  .project-info h3 {
+    font-size: 23px;
+  }
+
+  .project-info p {
+    font-size: 15px;
+  }
+
+  .project-tags {
+    left: 15px;
+    bottom: 15px;
+    gap: 6px;
+  }
+
+  .project-tags span {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .view-project {
+    top: 25px;
+    right: 20px;
+  }
+}
+

@@ -243,7 +243,7 @@ function App() {
       
       {/* ABOUT SECTION */}
 
-      <section className="about-section">
+      <section id="about" className="about-section">
 
         <div className="about-stats">
         <h2>
@@ -329,10 +329,10 @@ function App() {
           <div className="build-logo">
             <img src={rubberV} alt="VSRP" className="build-v-image" />
           </div>
-            <div className="scroll-indicator">
-              <span>↓</span>
-              <strong>SCROLL DOWN</strong>
-            </div>
+          <a href="#about" className="scroll-down">
+            <span>↓</span>
+            SCROLL DOWN
+          </a>
         </div>
       </section>
 
